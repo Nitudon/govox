@@ -5,10 +5,6 @@
 -out:C:/UnityProjects/govox/Temp/Assembly-CSharp.dll
 -nostdlib
 -unsafe
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -69,6 +65,10 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll"
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -76,12 +76,12 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll"
--r:C:/Users/naoki/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll
--r:C:/Users/naoki/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll
--r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween50.dll
--r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween46.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween43.dll
+-r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween46.dll
+-r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween50.dll
+-r:C:/Users/naoki/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll
+-r:C:/Users/naoki/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll"
@@ -521,6 +521,7 @@
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRScreenFade.cs
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRTrackedRemote.cs
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRWaitCursor.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Input/OculusInputHandler.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/OVRUtil.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AnimationUI.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/ArrayExtension.cs
