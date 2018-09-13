@@ -9,6 +9,13 @@ using UdonLib.Commons;
 /// </summary>
 public class OculusInputHandler : InitializableMono, IDisposable
 {
+    private enum InputType : byte
+    {
+        Get,
+        GetUp,
+        GetDown,
+    }
+
     private Dictionary<OVRInput.Button, ISubject<Unit>> onOVRInputGet;
     private Dictionary<OVRInput.Button, ISubject<Unit>> onOVRInputGetUp;
     private Dictionary<OVRInput.Button, ISubject<Unit>> onOVRInputGetDown;
@@ -34,18 +41,48 @@ public class OculusInputHandler : InitializableMono, IDisposable
     }
 
     public ISubject<Unit> OnOVRInputGet(OVRInput.Button button)
-    { 
-        if(onOVRInputGet == null)
+    {
+        return OnOVRInputImpl(ref onOVRInputGet, ref onOVRInputGetObserveCallbacks, button);
+    }
+
+    public void ClearOVRInputGet(OVRInput.Button button)
+    {
+        ClearOnOVRInputImpl(ref onOVRInputGet, ref onOVRInputGetObserveCallbacks, button);
+    }
+
+    public ISubject<Unit> OnOVRInputGetUp(OVRInput.Button button)
+    {
+        return OnOVRInputImpl(ref onOVRInputGetUp, ref onOVRInputGetUpObserveCallbacks, button);
+    }
+
+    public void ClearOVRInputGetUp(OVRInput.Button button)
+    {
+        ClearOnOVRInputImpl(ref onOVRInputGetUp, ref onOVRInputGetUpObserveCallbacks, button);
+    }
+
+    public ISubject<Unit> OnOVRInputGetDown(OVRInput.Button button)
+    {
+        return OnOVRInputImpl(ref onOVRInputGetDown, ref onOVRInputGetDownObserveCallbacks, button);
+    }
+
+    public void ClearOVRInputGetDown(OVRInput.Button button)
+    {
+        ClearOnOVRInputImpl(ref onOVRInputGetDown, ref onOVRInputGetDownObserveCallbacks, button);
+    }
+
+    private ISubject<Unit> OnOVRInputImpl(ref Dictionary<OVRInput.Button, ISubject<Unit>> subDict, ref Dictionary<OVRInput.Button, Action> actDict, OVRInput.Button button)
+    {
+        if (subDict == null)
         {
-            onOVRInputGet = new Dictionary<OVRInput.Button, ISubject<Unit>>();
+            subDict = new Dictionary<OVRInput.Button, ISubject<Unit>>();
         }
 
-        if(onOVRInputGetObserveCallbacks == null)
+        if (actDict == null)
         {
-            onOVRInputGetObserveCallbacks = new Dictionary<OVRInput.Button, Action>();
+            actDict = new Dictionary<OVRInput.Button, Action>();
         }
 
-        if(onOVRInputGet.TryGetValue(button, out var sub))
+        if (subDict.TryGetValue(button, out var sub))
         {
             return sub;
         }
@@ -56,13 +93,13 @@ public class OculusInputHandler : InitializableMono, IDisposable
                     .AddTo(_inputSubscriptionDisposable);
 
             Action action = () => sub.OnNext(Unit.Default);
-            if(onOVRInputGetObserveCallbacks.ContainsKey(button))
+            if (actDict.ContainsKey(button))
             {
-                onOVRInputGetObserveCallbacks[button] = action;    
+                actDict[button] = action;
             }
             else
             {
-                onOVRInputGetObserveCallbacks.Add(button, action);
+                actDict.Add(button, action);
             }
 
             onFixedUpdateObserveCallback += action;
@@ -70,13 +107,53 @@ public class OculusInputHandler : InitializableMono, IDisposable
         }
     }
 
-    public void ClearOVRInputGet()
+    private void ClearOnOVRInputImpl(ref Dictionary<OVRInput.Button, ISubject<Unit>> subDict, ref Dictionary<OVRInput.Button, Action> actDict, OVRInput.Button button)
     {
-        
+        if (subDict.TryGetValue(button, out var sub))
+        {
+            sub.OnCompleted();
+            subDict.Remove(button);
+
+            if (actDict.TryGetValue(button, out var act))
+            {
+                onFixedUpdateObserveCallback -= act;
+                actDict.Remove(button);
+            }
+        }
+    }
+
+    public void ClearAll()
+    {
+        _inputSubscriptionDisposable.Clear();
+
+        onFixedUpdateObserveCallback = null;
+
+        onOVRInputGet?.Clear();
+        onOVRInputGetUp?.Clear();
+        onOVRInputGetDown?.Clear();
+
+        onOVRInputGetObserveCallbacks?.Clear();
+        onOVRInputGetUpObserveCallbacks?.Clear();
+        onOVRInputGetDownObserveCallbacks?.Clear();
     }
 
     public void Dispose()
     {
+        ClearAll();
+
         _inputSubscriptionDisposable.Dispose();
+
+        onOVRInputGet = null;
+        onOVRInputGetUp = null;
+        onOVRInputGetDown = null;
+
+        onOVRInputGetObserveCallbacks = null;
+        onOVRInputGetUpObserveCallbacks = null;
+        onOVRInputGetDownObserveCallbacks = null;
+    }
+
+    private void OnDestroy()
+    {
+        Dispose();
     }
 }
