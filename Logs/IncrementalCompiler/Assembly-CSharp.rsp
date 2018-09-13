@@ -5,12 +5,6 @@
 -out:C:/UnityProjects/govox/Temp/Assembly-CSharp.dll
 -nostdlib
 -unsafe
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -71,6 +65,12 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll"
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -524,8 +524,9 @@
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRScreenFade.cs
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRTrackedRemote.cs
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRWaitCursor.cs
--i:C:/UnityProjects/govox/Assets/Scripts/Input/OculusInputHandler.cs
--i:C:/UnityProjects/govox/Assets/Scripts/OVRUtil.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/DI/Installer/InputInstaller.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Input/OVRInputHandler.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Util/OVRUtil.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AnimationUI.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/ArrayExtension.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AssetLoder.cs

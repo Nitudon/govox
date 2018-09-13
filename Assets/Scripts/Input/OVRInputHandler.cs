@@ -7,7 +7,7 @@ using UdonLib.Commons;
 /// <summary>
 /// 大雑把な入力処理
 /// </summary>
-public class OculusInputHandler : InitializableMono, IDisposable
+public class OVRInputHandler : InitializableMono, IDisposable
 {
     private enum InputType : byte
     {
