@@ -85,6 +85,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:C:/UnityProjects/govox/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween43.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween46.dll

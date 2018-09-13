@@ -6,6 +6,13 @@
 -nostdlib
 -unsafe
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/Assembly-CSharp.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Assembly-UnityScript.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -69,11 +76,6 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll"
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Assembly-UnityScript.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll"
@@ -97,6 +99,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:C:/UnityProjects/govox/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween43.dll
 -r:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/DOTween_1_1_310/DOTween/DOTween46.dll
