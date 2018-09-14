@@ -7,7 +7,7 @@ namespace UdonLib.Commons {
     public class UdonBehaviour : MonoBehaviour {
 
         //Cached Transform
-        public new Transform transform
+        public Transform CachedTransform
         {
             get { return _transform ?? (_transform = GetComponent<Transform>()); }
             set
@@ -17,7 +17,7 @@ namespace UdonLib.Commons {
         }
 
         //Cached RigitBody
-        public Rigidbody rigitbody
+        public Rigidbody CachedRigitbody
         {
             get
             {
@@ -36,8 +36,8 @@ namespace UdonLib.Commons {
         }
 
         //内部のキャッシュ
-        private Transform _transform;
-        private Rigidbody _rigitbody;
+        protected Transform _transform;
+        protected Rigidbody _rigitbody;
 
         //コールバック的な
         public delegate void callback();
