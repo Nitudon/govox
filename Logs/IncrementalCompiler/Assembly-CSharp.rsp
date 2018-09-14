@@ -65,11 +65,11 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll"
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
 -r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
@@ -525,7 +525,9 @@
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRTrackedRemote.cs
 -i:C:/UnityProjects/govox/Assets/Oculus/VR/Scripts/Util/OVRWaitCursor.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/DI/Installer/InputInstaller.cs
--i:C:/UnityProjects/govox/Assets/Scripts/Input/OVRInputHandler.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRControllerRay.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRControllerRayVisualizer.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRInputHandler.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Util/OVRUtil.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AnimationUI.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/ArrayExtension.cs
@@ -548,6 +550,7 @@
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/InstantLog.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/IntExtension.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/IPv4Helper.cs
+-i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/IRayHandler.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/MersenneTwister.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/NearObject.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/NumberImageView.cs
