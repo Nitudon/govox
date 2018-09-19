@@ -483,7 +483,7 @@
         public class SoundObservable
         {
 
-            public static ReactiveProperty<int> BarChangedObservable()
+            public static IReadOnlyReactiveProperty<int> BarChangedObservable()
             {
                 return Observable.EveryUpdate()
                     .Where(x => x != Music.Just.Bar)
@@ -493,7 +493,7 @@
                     .ToReactiveProperty();
             }
 
-            public static ReactiveProperty<int> BeatChangedObservable()
+            public static IReadOnlyReactiveProperty<int> BeatChangedObservable()
             {
                 return Observable.EveryUpdate()
                     .Where(x => x != Music.Just.Beat)
@@ -503,7 +503,7 @@
                     .ToReactiveProperty();
             }
 
-            public static ReactiveProperty<int> UnitChangedObservable()
+            public static IReadOnlyReactiveProperty<int> UnitChangedObservable()
             {
                 return Observable.EveryUpdate()
                     .Where(x => x != Music.Just.Unit)

@@ -11,7 +11,7 @@ namespace UdonObservable
     {
         public static class ReactiveTimer
         {
-            public static ReactiveProperty<int> ReactiveTimerForSeconds()
+            public static IReadOnlyReactiveProperty<int> ReactiveTimerForSeconds()
             {
                 return Observable
                 .Timer(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1))
@@ -20,7 +20,7 @@ namespace UdonObservable
                 .ToReactiveProperty();
             }
 
-            public static ReactiveProperty<int> ReactiveTimerForSeconds(int count)
+            public static IReadOnlyReactiveProperty<int> ReactiveTimerForSeconds(int count)
             {
                 return Observable
                 .Timer(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(1))

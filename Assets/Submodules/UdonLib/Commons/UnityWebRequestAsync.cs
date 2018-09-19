@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-using UniRx;
+using UniRx.Async;
 
 namespace UdonLib.Commons
 {
