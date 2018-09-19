@@ -1,8 +1,9 @@
-﻿using UniRx;
+﻿using System;
+using UniRx;
 using UdonLib.Commons;
 using UnityEngine;
 
-public class OVRControllerRayModel : IRayHandler
+public class OVRControllerRayModel : IRayHandler, IDisposable
 {
     public Subject<RaycastHit> OnRaycastHitObject;
 
@@ -14,5 +15,10 @@ public class OVRControllerRayModel : IRayHandler
     public void OnRayHit(RaycastHit hit)
     {
         OnRaycastHitObject.OnNext(hit);
+    }
+
+    public void Dispose()
+    {
+        OnRaycastHitObject.Dispose();
     }
 }
