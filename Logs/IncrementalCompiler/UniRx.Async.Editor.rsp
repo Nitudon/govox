@@ -315,7 +315,7 @@
 -d:ENABLE_VSTU
 -d:UNITY_HAS_GOOGLEVR
 -d:UNITY_HAS_TANGO
--i:C:/UnityProjects/govox/Assets/Plugins/UniRx/Scripts/Async/Editor/SplitterGUILayout.cs
--i:C:/UnityProjects/govox/Assets/Plugins/UniRx/Scripts/Async/Editor/UniTaskTrackerTreeView.cs
--i:C:/UnityProjects/govox/Assets/Plugins/UniRx/Scripts/Async/Editor/UniTaskTrackerWindow.cs
+-i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/UniRx/Scripts/Async/Editor/SplitterGUILayout.cs
+-i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/UniRx/Scripts/Async/Editor/UniTaskTrackerTreeView.cs
+-i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Plugins/UniRx/Scripts/Async/Editor/UniTaskTrackerWindow.cs
 -v:0
