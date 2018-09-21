@@ -15,4 +15,9 @@ public class OVRControllerRayVisualizer : UdonBehaviour
         _lineRenderer.SetPosition(0, _anchor.position);
         _lineRenderer.SetPosition(1, pos);
     }
+
+    public void SetVisible(bool visible)
+    {
+        _lineRenderer.enabled = visible;
+    }
 }

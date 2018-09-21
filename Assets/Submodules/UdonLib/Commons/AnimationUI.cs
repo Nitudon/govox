@@ -55,17 +55,11 @@ namespace UdonLib.Commons {
             TextAnimation
                 .OnStart(() =>
                 {
-                    if (OnAnimationStarted != null)
-                    {
-                        OnAnimationStarted();
-                    }
+                    OnAnimationStarted?.Invoke();
                 })
                 .OnComplete(() =>
                 {
-                    if (OnAnimationEnded != null)
-                    {
-                        OnAnimationEnded();
-                    }
+                    OnAnimationEnded?.Invoke();
                 });
 
             TextAnimation.Play();
