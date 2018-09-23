@@ -5,15 +5,6 @@
 -out:C:/UnityProjects/govox/Temp/Assembly-CSharp.dll
 -nostdlib
 -unsafe
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.Async.dll
--r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.Async.Editor.dll
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -74,6 +65,15 @@
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/UnityEditor.dll"
 -r:"C:\Program Files\Unity\Hub\Editor\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll"
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject-Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/Zenject.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.Async.dll
+-r:C:/UnityProjects/govox/Library/ScriptAssemblies/UniRx.Async.Editor.dll
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2018.2.0f2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
@@ -537,6 +537,7 @@
 -i:C:/UnityProjects/govox/Assets/Scripts/Voxel/Builder/IObjectCreator.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Voxel/Builder/VoxelCreator.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Voxel/Object/CreatableVoxel.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/Voxel/Object/RayCastMeshSeparateCollision.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AnimationUI.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/ArrayExtension.cs
 -i:C:/UnityProjects/govox/Assets/Submodules/UdonLib/Commons/AssetLoder.cs

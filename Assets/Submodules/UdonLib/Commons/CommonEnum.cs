@@ -1,22 +1,40 @@
 ﻿namespace UdonLib.Commons
 {
-    public enum DirectionXY
+    public enum DirectionXYZ : byte
     {
         None,
         Up,
         Down,
+        Front,
+        Back,
         Left,
         Right
     }
 
-    public enum DirectionY
+    public enum DirectionXY : byte
+    {
+        None,
+        Front,
+        Back,
+        Left,
+        Right
+    }
+
+    public enum DirectionZ : byte
+    {
+        None,
+        Up,
+        Down,
+    }
+
+    public enum DirectionY : byte
     {
         None,
         Front,
         Back,
     }
 
-    public enum DirectionX
+    public enum DirectionX : byte
     {
         None,
         Left,
