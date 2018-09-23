@@ -532,6 +532,7 @@
 -i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRControllerRayModel.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRControllerRayVisualizer.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Input/Controller/OVRInputHandler.cs
+-i:C:/UnityProjects/govox/Assets/Scripts/System/Define/ObjectDefine.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/System/SceneSystemPresenter.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Util/OVRUtil.cs
 -i:C:/UnityProjects/govox/Assets/Scripts/Voxel/Builder/IObjectCreator.cs
