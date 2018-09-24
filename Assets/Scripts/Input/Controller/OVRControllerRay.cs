@@ -37,9 +37,9 @@ public class OVRControllerRay : InitializableMono
 
     private void CheckRaycastHit()
     {
-        var rayPosition = _transform.position + Vector3.forward * RAY_LENGTH;
+        var rayPosition = CachedTransform.position + Vector3.forward * RAY_LENGTH;
 
-        if(Physics.Raycast(_transform.position, transform.TransformDirection(Vector3.forward), out var hit, RAY_LENGTH))
+        if(Physics.Raycast(CachedTransform.position, transform.TransformDirection(Vector3.forward), out var hit, RAY_LENGTH))
         {
             _rayHandler.OnRayHit(hit);
             rayPosition = hit.transform.position;

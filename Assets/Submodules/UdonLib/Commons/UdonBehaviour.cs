@@ -36,8 +36,8 @@ namespace UdonLib.Commons {
         }
 
         //内部のキャッシュ
-        protected Transform _transform;
-        protected Rigidbody _rigitbody;
+        private Transform _transform;
+        private Rigidbody _rigitbody;
 
         //コールバック的な
         public delegate void callback();
