@@ -4,4 +4,14 @@
     {
         void OnRayHit(UnityEngine.RaycastHit hit);
     }
+
+    public interface IRayExitHandler
+    {
+        void OnRayExit(UnityEngine.RaycastHit hit);
+    }
+
+    public interface IRayTriggerHandler : IRayHandler, IRayExitHandler
+    {
+
+    }
 }

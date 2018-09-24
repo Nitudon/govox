@@ -7,7 +7,7 @@ namespace UdonLib.Commons
 {
     public static class ExtensionGameObject
     {
-        public static bool HasComponent<T>(this GameObject go) where T : Component
+        public static bool HasComponent<T>(this GameObject go)
         {
             if(go == null)
             {
@@ -17,11 +17,11 @@ namespace UdonLib.Commons
             return go.GetComponent<T>() != null;
         }
 
-        public static bool HasComponent<T>(this GameObject go, out T component) where T : Component
+        public static bool HasComponent<T>(this GameObject go, out T component)
         {
             if (go == null)
             {
-                component = null;
+                component = default(T);
                 return false;
             }
             component = go.GetComponent<T>();
