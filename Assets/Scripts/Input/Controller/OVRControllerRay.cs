@@ -17,6 +17,8 @@ public class OVRControllerRay : InitializableMono
     [Inject]
     private IRayHandler _rayHandler;
 
+    private IRayTriggerHandler _currentRayTriggerHandler;
+
     private bool _isValid;
 
     public override void Initialize()
@@ -43,6 +45,11 @@ public class OVRControllerRay : InitializableMono
         {
             _rayHandler.OnRayHit(hit);
             rayPosition = hit.transform.position;
+
+            if(hit.collider.gameObject.HasComponent<IRayTriggerHandler>(out var handler))
+            {
+
+            }
         }
 
         if (_rayVisible)
