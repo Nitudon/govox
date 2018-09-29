@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/OVR_Template.unity
     guid: c27730f08d92fe34c8001cb23b561ea1
+  - enabled: 1
+    path: Assets/Scenes/dev.unity
+    guid: 60aa72954941e2e43ababb486e182494
   m_configObjects: {}
