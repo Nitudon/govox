@@ -23,7 +23,7 @@ public class RayCastMeshCollisionUseCase : IRayTriggerHandler, IDisposable
         _hitDirection.Value = CheckDirectionalHitRayCast(hit);
     }
 
-    public void OnRayExit(RaycastHit hit)
+    public void OnRayExit()
     {
         _hitDirection.Value = DirectionXYZ.None;
     }

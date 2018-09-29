@@ -7,7 +7,7 @@
 
     public interface IRayExitHandler
     {
-        void OnRayExit(UnityEngine.RaycastHit hit);
+        void OnRayExit();
     }
 
     public interface IRayTriggerHandler : IRayHandler, IRayExitHandler

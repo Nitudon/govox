@@ -18,7 +18,6 @@ public class OVRControllerRay : InitializableMono
     private IRayHandler _rayHandler;
 
     private IRayTriggerHandler _currentRayTriggerHandler;
-
     private bool _isValid;
 
     public override void Initialize()
@@ -48,7 +47,12 @@ public class OVRControllerRay : InitializableMono
 
             if(hit.collider.gameObject.HasComponent<IRayTriggerHandler>(out var handler))
             {
-
+                _currentRayTriggerHandler = handler;
+                handler.OnRayHit(hit);
+            }
+            else if(_currentRayTriggerHandler != null)
+            {
+                _currentRayTriggerHandler.OnRayExit();
             }
         }
 

@@ -14,14 +14,14 @@ public class CreatableVoxel : UdonBehaviour, IRayTriggerHandler
         _meshRayCastUseCase = new RayCastMeshCollisionUseCase(CachedTransform);
     }
 
-    public void OnRayExit(RaycastHit hit)
+    public void OnRayHit(RaycastHit hit)
     {
         _meshRayCastUseCase.OnRayHit(hit);
     }
 
-    public void OnRayHit(RaycastHit hit)
+    public void OnRayExit()
     {
-        _meshRayCastUseCase.OnRayExit(hit);
+        _meshRayCastUseCase.OnRayExit();
     }
 
     public void SetMaterial()
