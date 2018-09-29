@@ -42,12 +42,13 @@ public class OVRControllerRay : InitializableMono
 
         if(Physics.Raycast(CachedTransform.position, transform.TransformDirection(Vector3.forward), out var hit, RAY_LENGTH))
         {
-            _rayHandler.OnRayHit(hit);
+            //_rayHandler.OnRayHit(hit);
             rayPosition = hit.transform.position;
 
-            if(hit.collider.gameObject.HasComponent<IRayTriggerHandler>(out var handler))
+            var handler = hit.collider.gameObject.GetComponent<TestRayHandlableCube>();
+            if(handler != null)
             {
-                _currentRayTriggerHandler = handler;
+                _currentRayTriggerHandler = handler as IRayTriggerHandler;
                 handler.OnRayHit(hit);
             }
             else if(_currentRayTriggerHandler != null)
