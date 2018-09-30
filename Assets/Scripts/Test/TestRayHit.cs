@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UdonLib.Commons;
+using govox;
 
 public class TestRayHit : UdonBehaviour 
 {
+    [SerializeField]
+    private Transform _objectRoot;
+
+    [SerializeField]
+    private VoxelCreator _voxelCreator;
+
     private const float RAY_LENGTH = 200f;
 
     private void Update()
@@ -22,11 +29,12 @@ public class TestRayHit : UdonBehaviour
 
         if(rayHit)
         {
-            var rayHandler = hit.collider.GetComponent<IRayHandler>();
+            var rayHandler = hit.collider.GetComponent<IVoxel>();
 
             if (rayHandler != null)
             {
                 rayHandler.OnRayHit(hit);
+                //_voxelCreator.Create(_objectRoot);
             }
         }
     }

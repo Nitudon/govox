@@ -3,6 +3,7 @@ using UniRx;
 using UniRx.Triggers;
 using UdonLib.Commons;
 using Zenject;
+using govox;
 
 public class OVRControllerRay : InitializableMono
 {
@@ -17,7 +18,7 @@ public class OVRControllerRay : InitializableMono
     [Inject]
     private IRayHandler _rayHandler;
 
-    private IRayTriggerHandler _currentRayTriggerHandler;
+    private IVoxel _currentHitVoxel;
     private bool _isValid;
 
     public override void Initialize()
@@ -40,21 +41,14 @@ public class OVRControllerRay : InitializableMono
     {
         var rayPosition = CachedTransform.position + Vector3.forward * RAY_LENGTH;
 
-        if(Physics.Raycast(CachedTransform.position, transform.TransformDirection(Vector3.forward), out var hit, RAY_LENGTH))
+        if(VoxelUtility.VoxelRayCast(CachedTransform.position, transform.TransformDirection(Vector3.forward), out var voxel, RAY_LENGTH))
         {
-            //_rayHandler.OnRayHit(hit);
-            rayPosition = hit.transform.position;
-
-            var handler = hit.collider.gameObject.GetComponent<TestRayHandlableCube>();
-            if(handler != null)
-            {
-                _currentRayTriggerHandler = handler as IRayTriggerHandler;
-                handler.OnRayHit(hit);
-            }
-            else if(_currentRayTriggerHandler != null)
-            {
-                _currentRayTriggerHandler.OnRayExit();
-            }
+            rayPosition = voxel.HitPosition;
+            _currentHitVoxel = voxel.VoxelInfo;
+        }
+        else if(_currentHitVoxel != null)
+        {
+            _currentHitVoxel.OnRayExit();
         }
 
         if (_rayVisible)

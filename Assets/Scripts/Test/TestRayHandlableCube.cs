@@ -3,7 +3,7 @@ using UnityEngine;
 using UdonLib.Commons;
 using UniRx;
 
-public class TestRayHandlableCube : UdonBehaviour, IRayHandler
+public class TestRayHandlableCube : UdonBehaviour, IRayTriggerHandler
 {
     private RayCastMeshCollisionUseCase _collision;
 
@@ -24,5 +24,10 @@ public class TestRayHandlableCube : UdonBehaviour, IRayHandler
     public void OnRayHit(RaycastHit hit)
     {
         _collision.OnRayHit(hit);
+    }
+
+    public void OnRayExit()
+    {
+        _collision.OnRayExit();
     }
 }

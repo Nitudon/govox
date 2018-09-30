@@ -23,6 +23,7 @@ public class VoxelCreator : InitializableMono, IObjectCreator
     public void Create(Vector3 position, Transform parent)
     {
         var voxel = Instantiate(_baseVoxPrefab, parent);
+        voxel.Initialize();
         voxel.SetLocalPosition(position);
     }
 
