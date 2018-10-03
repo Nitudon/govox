@@ -19,6 +19,7 @@ public class OVRControllerRay : InitializableMono
     private IRayHandler _rayHandler;
 
     private IVoxel _currentHitVoxel;
+    public IVoxel CurrentHitVoxel => _currentHitVoxel;
     private bool _isValid;
 
     public override void Initialize()
