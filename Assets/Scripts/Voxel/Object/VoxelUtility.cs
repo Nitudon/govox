@@ -29,5 +29,16 @@ namespace govox
         }
 
         private static Dictionary<int, IVoxel> _voxelMap;
+        public static Dictionary<int, IVoxel> VoxelMap
+        {
+            get
+            {
+                if(_voxelMap == null)
+                {
+                    _voxelMap = new Dictionary<int, IVoxel>();
+                }
+                return _voxelMap;
+            }
+        }
     }
 }
