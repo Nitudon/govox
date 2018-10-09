@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UdonLib.Commons;
 
 namespace govox
 {
@@ -38,6 +39,27 @@ namespace govox
                     _voxelMap = new Dictionary<int, IVoxel>();
                 }
                 return _voxelMap;
+            }
+        }
+
+        public static Vector3 DirectionalCenterPoint(Vector3 anchor, DirectionXYZ direction)
+        {
+            switch(direction)
+            {
+                case DirectionXYZ.Up :
+                    return anchor + Vector3.up * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                case DirectionXYZ.Down :
+                    return anchor + Vector3.down * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                case DirectionXYZ.Front :
+                    return anchor + Vector3.forward * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                case DirectionXYZ.Back :
+                    return anchor + Vector3.back * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                case DirectionXYZ.Left :
+                    return anchor + Vector3.left * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                case DirectionXYZ.Right :
+                    return anchor + Vector3.right * ObjectDefine.UNIT_VOXEL_SCALE * 0.5f;
+                default :
+                    return anchor;
             }
         }
     }
