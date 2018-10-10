@@ -17,6 +17,7 @@ public class VoxelCreator : InitializableMono, IObjectCreator
     public override void Initialize()
     {
         _material = new Material(_baseMaterial);
+        _material.name = "voxelMat";
         _material.hideFlags = HideFlags.DontSave;
     }
 
