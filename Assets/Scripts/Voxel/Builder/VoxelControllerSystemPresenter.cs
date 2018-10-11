@@ -1,11 +1,15 @@
 using UniRx;
 using UnityEngine;
 using UdonLib.Commons;
+using Zenject;
 
 namespace govox
 {
     public class VoxelControllerSystemPresenter : InitializableMono
     {
+        [Inject]
+        private VoxelBuilderModel _model;
+
         [SerializeField]
         private OVRInputHandler _eventPresenter;
 
@@ -18,6 +22,9 @@ namespace govox
         [SerializeField]
         private VoxelCreator _creationUseCase;
 
+        [SerializeField]
+        private BuilderMover _movingUseCase;
+
         public void Initialize()
         {
             _eventPresenter.Initialize();
@@ -27,9 +34,18 @@ namespace govox
 
         private void Bind()
         {
+            _rayPresenter
+                .;
+
             _eventPresenter
                 .OnOVRInputGetDown(OVRInput.Button.PrimaryIndexTrigger)
-                .Subscribe(_ => _creationUseCase.Create())
+                .Where(_ => _model.IsHit)
+                .Subscribe(_ => _creationUseCase.Create(_model.RayHitInfo.MeshCenter))
+                .AddTo(gameObject);
+
+            _touchPanelHandler
+                .OVRTouchAxisObservable
+                .Subscribe(_movingUseCase.OnInputDelta)
                 .AddTo(gameObject);
         }
     }
