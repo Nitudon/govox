@@ -10,7 +10,7 @@
 
 シーンローダー、MonoBehaviour拡張
 
-バイナリシリアライズ、非同期WWW,UnityWebRequest
+バイナリシリアライズ、非同期UnityWebRequest
 
 Initializable
 

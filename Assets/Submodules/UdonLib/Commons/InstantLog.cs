@@ -17,31 +17,24 @@ namespace UdonLib.Commons
         }
 
         [Conditional("UNITY_EDITOR")]
-        public static void StringLog(string str)
+        public static void StringLog(object obj)
         {
             //いつもの
-            UnityEngine.Debug.Log(str);
+            UnityEngine.Debug.Log(obj);
         }
 
         [Conditional("UNITY_EDITOR")]
-        public static void StringLogWarning(string str)
+        public static void StringLogWarning(object obj)
         {
             //いつもの
-            UnityEngine.Debug.LogWarning(str);
+            UnityEngine.Debug.LogWarning(obj);
         }
 
         [Conditional("UNITY_EDITOR")]
-        public static void StringLogError(string str)
+        public static void StringLogError(object obj)
         {
             //いつもの
-            UnityEngine.Debug.LogError(str);
-        }
-
-        [Conditional("UNITY_EDITOR")]
-        public static void ObjectLog(object o)
-        {
-            //使うとき違いそうなんで分離
-            UnityEngine.Debug.Log(o);
+            UnityEngine.Debug.LogError(obj);
         }
 
         [Conditional("UNITY_EDITOR")]
