@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
 using UnityEngine;
 using UdonLib.Commons;
 using DG.Tweening;
@@ -17,12 +15,16 @@ namespace UdonLib.UI
         public virtual void Initialize()
         {
             _cachedRectTransform.localScale = Vector3.zero;
-            _cachedRectTransform.DOScale(Vector3.one, _transitionTime);
         }
 
-        private async Task OpenDialog()
+        public virtual void OpenDialogAnimation(Action onComplete = null)
         {
+            _cachedRectTransform.DOScale(Vector3.one, _transitionTime).OnComplete(() => onComplete?.Invoke());
+        }
 
+        public virtual void CloseDialogAnimation(Action onComplete = null)
+        {
+            _cachedRectTransform.DOScale(Vector3.zero, _transitionTime).OnComplete(() => onComplete?.Invoke());
         }
     }
 }

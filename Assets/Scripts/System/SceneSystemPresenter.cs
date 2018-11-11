@@ -1,14 +1,21 @@
-﻿using UnityEngine;
-using UdonLib.Commons;
+﻿using System.Tasks.
+using UnityEngine;
 
-public class SceneSystemPresenter : UdonBehaviour
+namespace UdonLib.Commons
 {
-    [SerializeField]
-    private InitializableMono[] _initializers;
-
-    protected override void Start()
+    public class SceneSystemPresenter : UdonBehaviour
     {
-        base.Start();
-        _initializers.ForEach(x => x.Initialize());
+        [SerializeField]
+        private InitializableMono[] _initializers;
+
+        [SerializeField]
+        private ncInitializableMono[] _asyncInitializers;
+
+        protected override async void Start()
+        {
+            base.Start();
+            _initializers.ForEach(x => x.Initialize());
+            await 
+        }
     }
 }
