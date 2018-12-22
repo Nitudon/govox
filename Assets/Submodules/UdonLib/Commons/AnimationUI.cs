@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-namespace UdonLib.Commons {
+namespace UdonLib.Commons
+{
 
-    public class AnimationUIText : Text{
+    public class AnimationUIText : Text
+    {
 
         private Sequence TextAnimation;
 

@@ -3,48 +3,87 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UnityEngine;
 using UdonLib.Commons;
+using UniRx.Async;
 
 namespace UdonLib.UI
 {
     /// <summary>
+    /// ダイアログの基本の振る舞い
+    /// </summary>
+    public interface IDialogPresenter : IAsyncInitializable
+    {
+        UniTask OpenDialog();
+
+        UniTask CloseDialog();
+
+        void OnOpened();
+
+        void OnClosed();
+    }
+
+    /// <summary>
+    /// ダイアログの雛形
+    /// </summary>
+    public abstract class DialogPresenterBase : UIMono, IDialogPresenter
+    {
+        public abstract UniTask Initialize();
+
+        public abstract UniTask OpenDialog();
+
+        public abstract UniTask CloseDialog();
+
+        public virtual void OnOpened()
+        {
+
+        }
+
+        public virtual void OnClosed()
+        {
+
+        }
+    }
+
+    /// <summary>
     /// ダイアログのプレゼンターベース
     /// </summary>
     /// <typeparam name="TView">対応するビュー</typeparam>
-    public class DialogPresenterBase<TView> : UIMono, IInitializable where TView : DialogViewBase
+    public class DialogPresenterBase<TView> : DialogPresenterBase
+        where TView : DialogViewBase
     {
         [SerializeField]
         protected TView _view;
 
         public TView View => _view;
 
-        public Action onCreatedCallback;
+        public Action onOpenedCallback;
         public Action onClosedCallback;
 
-        public virtual void Initialize()
+        public override async UniTask Initialize()
         {
             _view.Initialize();
+            await _view.OpenDialogAnimation();
         }
 
-        public static void OpenDialog<TDialog>(RectTransform parent, Action<TDialog> preParam) where TDialog : DialogPresenterBase<TView>
+        public override async UniTask OpenDialog()
         {
-
+            await _view.OpenDialogAnimation();
         }
 
-        public virtual void CloseDialog()
+        public override async UniTask CloseDialog()
         {
-            _view.CloseDialogAnimation(() =>
-            {
-                onClosedCallback?.Invoke();
-                Destroy(gameObject);
-            });
+            await _view.CloseDialogAnimation();
         }
 
-        protected virtual DialogPresenterBase<TView> CreateDialog(RectTransform parent, DialogPresenterBase<TView> prefab, Action onCreated = null)
+        public override void OnOpened()
         {
-            var instance = Instantiate(prefab, parent);
-            onCreatedCallback?.Invoke();
-            instance.View.OpenDialogAnimation(onCreated);
-            return instance;
+            base.OnOpened();
+            onOpenedCallback?.Invoke();
+        }
+
+        public override void OnClosed()
+        {
+            base.OnClosed();
+            onClosedCallback?.Invoke();
         }
     }
 
@@ -53,23 +92,24 @@ namespace UdonLib.UI
     /// </summary>
     /// <typeparam name="TView">対応するビュー</typeparam>
     [RequireComponent(typeof(DialogViewBase))]
-    public class DialogPresenterBase<TView, TResult> : DialogPresenterBase<TView>, IInitializable where TView : DialogViewBase
+    public class DialogPresenterBase<TView, TResult> : DialogPresenterBase<TView>
+        where TView : DialogViewBase
     {
         private TaskCompletionSource<TResult> tcs = null;
 
         protected TResult _result;
         public TResult Result => _result;
 
-        public override void Initialize()
+        public override async UniTask Initialize()
         {
             tcs = new TaskCompletionSource<TResult>();
-            base.Initialize();
+            await base.Initialize();
         }
 
-        public override void CloseDialog()
+        public override async UniTask CloseDialog()
         {
             tcs.SetResult(_result);
-            base.CloseDialog();
+            await base.CloseDialog();
         }
 
         public virtual TaskAwaiter<TResult> GetAwaiter()

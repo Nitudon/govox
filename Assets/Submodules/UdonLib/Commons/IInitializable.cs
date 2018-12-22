@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Collections;
+using UniRx.Async;
 
 namespace UdonLib.Commons
 {
@@ -20,7 +21,7 @@ namespace UdonLib.Commons
 
     public interface IAsyncInitializable
     {
-        Task Initialize();
+        UniTask Initialize();
     }
 
     public abstract class InitializableMono : UdonBehaviour, IInitializable
@@ -43,9 +44,9 @@ namespace UdonLib.Commons
 
     public abstract class AsyncInitializableMono : UdonBehaviour, IAsyncInitializable
     {
-        public virtual Task Initialize()
+        public virtual UniTask Initialize()
         {
-            return Task.CompletedTask;
+            return UniTask.CompletedTask;
         }
     }
 }

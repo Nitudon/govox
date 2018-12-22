@@ -15,15 +15,18 @@ Extensions
 
 バイナリシリアライズ、非同期UnityWebRequest
 
-Initializable
-
-UI基盤
+各種インターフェイス
 
 その他TIPS
 
+### UI
+汎用UI
+
+非同期ダイアログシステム
+
 ### UdonObservable
 
-Rx拡張、各種InputのRxラップ、タイマーなど
+Rx拡張、各種InputのRxラッパー、タイマーなど
 
 ## Use License
 

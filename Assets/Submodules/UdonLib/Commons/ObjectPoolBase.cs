@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-namespace UdonLib.Common
+namespace UdonLib.Commons
 {
     /// <summary>
     /// オブジェクトのプーリングを行うやつ

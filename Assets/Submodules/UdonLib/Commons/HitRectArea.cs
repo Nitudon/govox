@@ -1,4 +1,7 @@
 ﻿using UnityEngine.UI;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace UdonLib.UI
 {
@@ -10,5 +13,18 @@ namespace UdonLib.UI
             vh.Clear();
         }
     }
+
+    #region Editor Script
+    [CustomEditor(typeof(HitRectArea))]
+    public class HitRectAreaEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            HitRectArea rect = target as HitRectArea;
+
+            rect.raycastTarget = EditorGUILayout.Toggle("RayCast Target", rect.raycastTarget);
+        }
+    }
+    #endregion
 
 }

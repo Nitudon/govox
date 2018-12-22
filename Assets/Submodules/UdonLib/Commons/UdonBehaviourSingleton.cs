@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UdonLib.Commons {
-    public class UdonBehaviourSingleton<T> : UdonBehaviour where T : UdonBehaviour
+namespace UdonLib.Commons
+{
+    public class UdonBehaviourSingleton<T> : InitializableMono where T : InitializableMono
     {
         public static string ObjectName
         {
@@ -34,11 +35,6 @@ namespace UdonLib.Commons {
             }
         }
 
-        protected virtual void Init()
-        {
-
-        }
-
         public static void CreateInstance() 
         {
             if(null != _instance)
@@ -49,7 +45,9 @@ namespace UdonLib.Commons {
             else
             {
                 GameObject instanceObject = new GameObject(ComponentName);
-                instanceObject.AddComponent<T>();
+                T instance = instanceObject.AddComponent<T>();
+                _instance = instance;
+                _instance.Initialize();
             }
         }
 
@@ -64,7 +62,9 @@ namespace UdonLib.Commons {
             {
                 GameObject instanceObject = new GameObject(ComponentName);
                 instanceObject.transform.SetParent(parent);
-                instanceObject.AddComponent<T>();
+                T instance = instanceObject.AddComponent<T>();
+                _instance = instance;
+                _instance.Initialize();
             }
         }
 
@@ -88,7 +88,7 @@ namespace UdonLib.Commons {
                     _instance = (T)FindObjectOfType(t);
                     if (_instance == null)
                     {
-                        Debug.LogError("No Objects have component of " + t);
+                        CreateInstance();
                     }
                 }
 
@@ -105,9 +105,22 @@ namespace UdonLib.Commons {
                 Debug.LogError(typeof(T) + " has already attached by" + Instance.gameObject.name);
                 return;
             }
+        }
 
-            Init();
+        public override void Initialize()
+        {
+            if(IsDontDestroy)
+            {
+                DontDestroyOnLoad(this);
+            }
+        }
 
+        protected virtual bool IsDontDestroy
+        {
+            get
+            {
+                return false;
+            }
         }
     }
 }

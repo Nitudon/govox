@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UdonLib.Commons;
 
-namespace UdonLib.UI {
-
+namespace UdonLib.UI
+{
     /// <summary>
     /// Canvas上のパーツのBase
     /// </summary>
@@ -17,15 +17,18 @@ namespace UdonLib.UI {
                 {
                     _cachedRectTransform = GetComponent<RectTransform>();
                 }
-
                 return _cachedRectTransform;
             }
+        }
+
+        public void ForceUpdate()
+        {
+            _cachedRectTransform?.ForceUpdateRectTransforms();
         }
 
         protected virtual void OnDestroy()
         {
             _cachedRectTransform = null;
         }
-
     }
 }
